@@ -1,0 +1,83 @@
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Node Modules
+# =========================
+node_modules/
+**/node_modules/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Build Outputs
+# =========================
+dist/
+build/
+coverage/
+**/dist/
+**/build/
+**/coverage/
+**/generated/
+
+# =========================
+# NestJS
+# =========================
+merchantflow_backend/prisma/dev.db
+merchantflow_backend/prisma/dev.db-journal
+
+# =========================
+# React Native / Expo
+# =========================
+merchantflow/.expo/
+merchantflow/.expo-shared/
+merchantflow/web-build/
+merchantflow/android/.gradle/
+merchantflow/android/app/build/
+merchantflow/android/build/
+merchantflow/ios/build/
+merchantflow/ios/Pods/
+
+# =========================
+# Expo
+# =========================
+*.expo
+
+# =========================
+# Cache
+# =========================
+.cache/
+.parcel-cache/
+.turbo/
+.next/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+.claude/
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
