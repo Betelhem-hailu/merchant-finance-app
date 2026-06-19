@@ -16,7 +16,6 @@ model User {
   id       String @id
   name     String
   email    String
-  password String
 
   financeAccounts FinanceAccount[]
   categories      Category[]
@@ -32,12 +31,12 @@ model User {
 }
 
 model FinanceAccount {
-  id             String @id
+  id             String @id @default(cuid())
   accountName    String
   accountType    String
   accountNumber  String
-  openingBalance Float
-  currentBalance Float
+  openingBalance Decimal @db.Decimal(18,2)
+  currentBalance Decimal @db.Decimal(18,2)
 
   userId String
   user   User   @relation(fields: [userId], references: [id])
@@ -49,10 +48,10 @@ model FinanceAccount {
 }
 
 model Transaction {
-  id              String @id
+  id              String @id @default(cuid())
   transactionType String
   description     String
-  amount          Float
+  amount          Decimal @db.Decimal(18,2)
 
   accountId      String
   financeAccount FinanceAccount @relation(fields: [accountId], references: [id])
@@ -65,8 +64,9 @@ model Transaction {
 }
 
 model Category {
-  id    String @id
+  id    String @id @default(cuid())
   name  String
+  type  String
   image String
 
   userId String
